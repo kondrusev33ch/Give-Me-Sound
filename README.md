@@ -18,3 +18,13 @@ yt_dlp can not be async.
 
 ## Possible improvements 
  - Use multiprocessing...
+
+## Requirements
+``
+aiohttp==3.7.4.post0   
+motor==3.0.0   
+Pyrogram==2.0.30   
+yt_dlp==2022.7.18    
+TgCrypto==1.2.3    
+dnspython==2.2.1
+`` 
