@@ -12,7 +12,7 @@ from database import Database
 import os
 import asyncio
 import aiohttp
-import youtube_dl
+import yt_dlp
 
 # Globals
 DB = Database()
@@ -125,7 +125,7 @@ async def yt_sound(client, message: Message):
     # Download an mp3 from the YouTube video
     try:
         await DB.update_is_downloading_status(u_id, True)  # change "is downloading" status
-        with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
+        with yt_dlp.YoutubeDL(YDL_OPTIONS) as ydl:
             info = ydl.extract_info(url, False)
             duration = round(info["duration"] / 60)
 
