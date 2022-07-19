@@ -14,8 +14,7 @@ I tried two async versions:
  - Second is pure_bot, where I tried to communicate with telegram api directly. Some functional is missin (/start, /status and description).
 
 ## Problem
-youtube_dl can not be async, and it is very slow.
+yt_dlp can not be async.
 
 ## Possible improvements 
- - Find another way to download audio files from the YT videos.
  - Use multiprocessing...
