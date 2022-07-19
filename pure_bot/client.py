@@ -1,6 +1,6 @@
 import os
 import aiohttp
-import youtube_dl
+import yt_dlp
 from typing import Optional
 from database import Database
 
@@ -123,7 +123,7 @@ class TgClient:
         # Download mp3 file from the YouTube video
         try:
             await DB.update_is_downloading_status(u_id, True)
-            with youtube_dl.YoutubeDL(OPTIONS) as ytdl:
+            with yt_dlp.YoutubeDL(OPTIONS) as ytdl:
                 info = ytdl.extract_info(url, False)
                 duration = round(info["duration"] / 60)
 
